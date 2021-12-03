@@ -1,5 +1,4 @@
 import React from "react";
-import { Fragment } from "react";
 
 import MeetupList from "../components/meetups/MeetupList";
 
@@ -23,9 +22,5 @@ const DUMMY_MEETUPS = [
 ];
 
 export default function HomePage() {
-  return (
-    <Fragment>
-      <MeetupList meetups={DUMMY_MEETUPS} />
-    </Fragment>
-  );
+  return <MeetupList meetups={DUMMY_MEETUPS} />;
 }
