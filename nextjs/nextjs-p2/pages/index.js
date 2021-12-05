@@ -25,12 +25,24 @@ export default function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
+// // Runs on the server on every request -> for high frequency changing data
+// export async function getServerSideProps(context) {
+//   const req = context.req;
+//   const res = context.res;
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//   };
+// }
+
+// Runs on the server after the revalidation time (if there are requests) -> for low frequency changing data
 export async function getStaticProps() {
   // fetch data from API
   return {
     props: {
       meetups: DUMMY_MEETUPS,
-      revalidate: 10,
+      revalidate: 10, // sets time till next re-render if there are incoming requests for this page
     },
   };
 }
