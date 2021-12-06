@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     const { title, image, address, description } = data;
 
     const client = await MongoClient.connect(
-      "mongodb+srv://user-admin:Nl5SVzobylpOz4hi@cluster0.osz55.mongodb.net/meetups?retryWrites=true&w=majority"
+      REPLACE-WITH-URI
     );
     const db = client.db;
     const meetupsCollection = db.collection("meetups");
